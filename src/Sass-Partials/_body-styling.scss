@@ -1,0 +1,24 @@
+* {
+    font-family: 'Lora', serif;
+}
+
+h2 {
+    text-align: center;
+    margin: 10% auto;
+    font-size: 250%;
+    letter-spacing: 0.15em;
+}
+section {
+    text-align: center;
+}
+P {
+    padding: 2% 15%;
+}
+figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        margin: 0 auto;
+    }
+}

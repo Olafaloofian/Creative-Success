@@ -1,0 +1,38 @@
+.nav-container {
+    font-family: 'Lora', serif;
+    nav {
+        font-size: 18px;
+        display: flex;
+        justify-content: space-around;
+        padding: 5% 0 2% 0;
+        .nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 10%;
+            height: 49px;
+            text-decoration: none;
+            color: rgb(114, 113, 113);
+            transform: scale(1);
+            transition: 0.3s ease-in-out;
+            border: 2px solid rgba(255, 255, 255, 0);
+        }
+        .nav-link:hover {
+            border: solid 2px rgb(233, 232, 232);
+            transition: 0.3s ease-in-out;
+        }
+        .selected-nav {
+            transition: 0.3s ease-in-out;
+            border: 2px solid rgb(202, 202, 202);
+        }
+        .selected-nav:hover {
+            border: 2px solid rgb(202, 202, 202);
+        }
+    }
+    small {
+        color: #aaa;
+        text-align: center;
+        margin: 0 5vw;
+        letter-spacing: 0.2em;
+    }
+}

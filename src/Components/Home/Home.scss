@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    figure, small {
+        margin: 0 auto;
+    }
+}
+.home-main {
+    margin-top: 5%;
+    figure {
+        margin: 0 auto 5% auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 70%;
+        img {
+            margin: 5px;
+        }
+    }
+}
