@@ -1,32 +1,38 @@
 .nav-container {
     font-family: 'Lora', serif;
     nav {
-        font-size: 18px;
-        display: flex;
-        justify-content: space-around;
-        padding: 5% 0 2% 0;
-        .nav-link {
+        .drawer {
+            font-size: 18px;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 10%;
-            height: 49px;
-            text-decoration: none;
-            color: rgb(114, 113, 113);
-            transform: scale(1);
-            transition: 0.3s ease-in-out;
-            border: 2px solid rgba(255, 255, 255, 0);
+            justify-content: space-around;
+            font-family: 'Lora', serif;
+            padding: 5% 0 2% 0;
+            .nav-link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 10%;
+                height: 49px;
+                text-decoration: none;
+                color: rgb(114, 113, 113);
+                transform: scale(1);
+                transition: 0.3s ease-in-out;
+                border: 2px solid rgba(255, 255, 255, 0);
+            }
+            .nav-link:hover {
+                border: solid 2px rgb(233, 232, 232);
+                transition: 0.3s ease-in-out;
+            }
+            .selected-nav {
+                transition: 0.3s ease-in-out;
+                border: 2px solid rgb(202, 202, 202);
+            }
+            .selected-nav:hover {
+                border: 2px solid rgb(202, 202, 202);
+            }
         }
-        .nav-link:hover {
-            border: solid 2px rgb(233, 232, 232);
-            transition: 0.3s ease-in-out;
-        }
-        .selected-nav {
-            transition: 0.3s ease-in-out;
-            border: 2px solid rgb(202, 202, 202);
-        }
-        .selected-nav:hover {
-            border: 2px solid rgb(202, 202, 202);
+        .menu-lines {
+            display: none;
         }
     }
     small {
@@ -34,5 +40,103 @@
         text-align: center;
         margin: 0 5vw;
         letter-spacing: 0.2em;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-container {
+        .banner-image {
+            width: 100%;
+        }
+        nav{
+            .drawer {
+                position: fixed;
+                box-shadow: grey 0 0 15px;
+                top: 0;
+                left: 0;
+                display: flex;
+                flex-direction: column;
+                width: 100vw;
+                padding: 0;
+                background: rgb(228, 228, 228);
+                transform: translateY(-100%);
+                transition: 0.5s all ease-in-out;
+                .nav-link {
+                    color: rgb(73, 73, 73);
+                    width: 100%;
+                    text-align: left;
+                    border: none;
+                    justify-content: flex-start;
+                    padding-left: 10%;
+                    // Border should be same color as background
+                    border: 3px solid rgb(228, 228, 228);
+                }
+                .selected-nav {
+                    background: rgb(201, 201, 201);
+                    width: 100%;
+                    color: white;
+                    border: 3px solid rgb(238, 238, 238);
+                    text-align: left;
+                }
+            }
+
+            .open {
+                transform: translateY(0);
+                transition: 0.5s all ease-in-out;
+            }
+            %menuline {
+                width: 50px;
+                height: 4px;
+                margin: 0 auto;
+                margin-bottom: 8px;
+                transition: 0.5s;
+                background: rgba(185, 185, 185, 0.466);
+            }
+            
+            %menux {
+                width: 50px;
+                height: 4px;
+                background: white;
+                box-shadow: none;
+                z-index: 99;
+                transition: 0.5s;
+            }
+        
+            .menu-lines{
+                display: initial;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 50px;
+                height: 40px;
+                z-index: 1;
+                cursor: pointer;
+                margin: 30px 20px 0 0;
+                flex-direction: column;
+                justify-content: center;
+                .menuline1{
+                    @extend %menuline
+                }
+                .menuline2{
+                    @extend %menuline
+                }
+                .menuline3{
+                    @extend %menuline
+                }
+                .menux1{
+                    transform: translate(0, 4px) rotate(-45deg);
+                    @extend %menux;
+                }
+                .menux2{
+                    opacity: 0;
+                    width: 0;
+                    @extend %menux;
+                }
+                .menux3{
+                    transform: translate(0, -4px) rotate(45deg);
+                    @extend %menux;
+                }
+            }  
+        }
     }
 }

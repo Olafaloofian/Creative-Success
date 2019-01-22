@@ -14,9 +14,24 @@ header {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        width: 70%;
+        width: 720px;
         img {
             margin: 5px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .home-main {
+        figure {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 80vw;
+            margin: 2% auto;
+            img {
+                width: 70vw;
+            }
         }
     }
 }

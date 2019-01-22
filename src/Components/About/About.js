@@ -11,7 +11,7 @@ const About = () => {
             <section className='about-info'>
                 <p>Welcome to Sydney Eliza Florals!</p>
                 <p>My name is Sydney, and I am passionate about creating beauty and expression through floral design. I am, and always have been, a lover of all things floral. I am inspired by organic styles, texture, and romantic colors.</p>
-                <p>I was born and raised in sunny Arizona. Some of the many things that make me happy include my fiance, camping, going to concerts, cooking, summer weather, sleeping in, and traveling.</p>
+                <p>I was born and raised in sunny Arizona. Some of the many things that make me happy include my husband, camping, going to concerts, cooking, summer weather, sleeping in, and traveling.</p>
                 <p>If you are in need of florals for any occasion feel free to reach out –I’d absolutely love to make something beautiful for you!</p>
                 <br/>
 

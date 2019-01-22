@@ -22,3 +22,18 @@ figure {
         margin: 0 auto;
     }
 }
+
+@media (max-width: 600px) {
+    h2 {
+        font-size: 180%;
+    }
+
+    figure {
+        img {
+            width: 75vw;
+        }
+    }
+    p {
+        padding: 5% 4%;
+    }
+}

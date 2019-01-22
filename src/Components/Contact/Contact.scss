@@ -59,7 +59,19 @@
 }
 
 
-
+@media (max-width: 600px) {
+    .contact-container {
+        form {
+            width: 80%;
+            input {
+                width: 100%;
+            }
+            button {
+                width: 100%;
+            }
+        }
+    }
+}
 
 
 
