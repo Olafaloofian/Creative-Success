@@ -1,0 +1,1 @@
+select * from creative_users where id = $1

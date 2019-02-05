@@ -27,6 +27,7 @@ export default class PortfolioItem extends Component {
     componentDidUpdate(prevProps) {
         if(prevProps.match.params.id !== this.props.match.params.id) {
             this.getDataFromSessionStorage()
+            window.scrollTo(0, 0)
         }
     }
 
@@ -48,11 +49,11 @@ export default class PortfolioItem extends Component {
                         </div>
                         <div className='portfolio-item-footer'>
                             {/* The <a> tag reloads the page, and pictures show up one by one */}
-                            <a href={`/portfolio/${selectedItem === allItems[0] ? allItems.slice(-1)[0].id : selectedItem.id - 1}`}>
+                            <Link to={`/portfolio/${selectedItem === allItems[0] ? allItems.slice(-1)[0].id : selectedItem.id - 1}`}>
                                 <nav>
                                     ◄ PREVIOUS PROJECT
                                 </nav>
-                            </a>
+                            </Link>
                             {/* The <Link> keeps the user at the bottom and loads new images. Ask Sydney which is better. */}
                             <Link to={`/portfolio/${selectedItem === allItems.slice(-1)[0] ? allItems[0].id : selectedItem.id + 1}`}>
                                 <nav>

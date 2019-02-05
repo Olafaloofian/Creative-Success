@@ -5,6 +5,7 @@ import About from './Components/About/About'
 import Contact from './Components/Contact/Contact'
 import Portfolio from './Components/Portfolio/Portfolio';
 import PortfolioItem from './Components/Portfolio/PortfolioItem';
+import LoginForm from './Components/Authorization/LoginForm';
 
 export default (
     <Switch>
@@ -13,5 +14,6 @@ export default (
         <Route path='/contact' component={Contact} />
         <Route path='/portfolio/:id' component={PortfolioItem} />
         <Route path='/portfolio' component={Portfolio} />
+        <Route path='/login' component={LoginForm} />
     </Switch>
 )

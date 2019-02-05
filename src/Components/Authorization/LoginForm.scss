@@ -1,0 +1,29 @@
+.login-container {
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+        small {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            padding: 10px 15px;
+            width: 70%;
+            background: transparent;
+            color: transparent;
+            height: 41px;
+        }
+        .failure {
+            background: rgb(252, 168, 168);
+            color: rgb(94, 94, 94);
+            transition: all 0.5s ease;
+        }
+    }
+
+}
+
+@import '../../Sass-Partials/input-styling', '../../Sass-Partials/body-styling', '../../Sass-Partials/button-styling'

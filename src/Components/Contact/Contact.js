@@ -18,7 +18,8 @@ class Contact extends React.Component {
         })
     }
 
-    async submitMessage() {
+    async submitMessage(e) {
+        e.preventDefault()
         const {name, email, eventDate, comment} = this.state
         const emailResponse = await axios.post('/api/contact/email', {name, email, eventDate, comment})
         if(emailResponse.status === 200) {
@@ -54,7 +55,7 @@ class Contact extends React.Component {
                         <h3>Comment:</h3>
                         <textarea required value={this.state.comment} onChange={(e) => this.handleChange('comment', e.target.value)} />
                         <br/>
-                        <button type='button' onClick={this.submitMessage}> Submit </button>
+                        <button type='button' onClick={(e) => this.submitMessage(e)}> Submit </button>
                     </form>
                 </section>
             </div>
