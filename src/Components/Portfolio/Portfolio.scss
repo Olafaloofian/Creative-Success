@@ -1,17 +1,27 @@
-.projects-container {
-    margin: 0 auto;
+.portfolio-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    .project {
-        margin: 30px 10px;
-        color: rgb(161, 161, 161);
+    align-items: center;
+    h4 {
         font-family: 'Lora', serif;
-        img {
-            height: 80%;
-            width: auto;
-            margin-bottom: 15px;
+        font-size: 20px;
+    }
+    .projects-container {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .project {
+            margin: 30px 10px;
+            color: rgb(161, 161, 161);
+            font-family: 'Lora', serif;
+            img {
+                height: 80%;
+                width: auto;
+                margin-bottom: 15px;
+            }
         }
     }
 }
@@ -53,11 +63,13 @@
 }
 
 @media (max-width: 600px) {
-    .projects-container {
-        .project {
-            margin: 10px auto;
-            img {
-                width: 90%;
+    .portfolio-container {
+        .projects-container {
+            .project {
+                margin: 10px auto;
+                img {
+                    width: 90%;
+                }
             }
         }
     }

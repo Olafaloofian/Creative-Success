@@ -43,6 +43,7 @@ export default class Portfolio extends Component {
             <div className="portfolio-container">
 
                 <h2>Projects</h2>
+                <h4>Select a project to view details.</h4>
 
                 <section className="projects-container">
                 {this.state.projects.map(project => {

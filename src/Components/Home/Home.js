@@ -1,7 +1,9 @@
 import React from 'react'
 import './Home.scss'
+import { withContext } from '../../ContextAPI/ContextHOC';
 
-export default function Home () {
+function Home (props) {
+    console.log('------------ props', props)
     return (
         <div className="centered-container">
             <section className='home-main'>
@@ -16,3 +18,5 @@ export default function Home () {
         </div>
     );
 }
+
+export default withContext(Home)

@@ -45,6 +45,8 @@ app.post('/api/register', authController.bcryptRegister)
 app.post('/api/login', authController.bcryptLogin);
 // Logout destroys session
 app.post('/api/logout', authController.logout);
+// Return user session
+app.get('/api/user', authController.getUser)
 // Middleware function for ensuring login
 function ensureLoggedIn(req, res, next) {
     if (req.session.user) {

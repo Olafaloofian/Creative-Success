@@ -1,9 +1,14 @@
 footer {
+    font-family: 'Lora', serif;
+    color: #c2c2c2;
+    padding-bottom: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    a {
+        color: #c2c2c2;
+    }
     .styled-line {
         height: 2px;
         width: 60vw;

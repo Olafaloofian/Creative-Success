@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.scss'
 import SocialSvg from '../Tools/SocialSvg'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
@@ -17,6 +18,7 @@ const Footer = () => {
                     <SocialSvg color='rgb(160, 160, 160)' name='facebook' size={40} />
                 </a>
             </div>
+            <Link to='/login'>LOGIN</Link>
         </footer>
     );
 };

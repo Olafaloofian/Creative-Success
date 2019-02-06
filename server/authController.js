@@ -9,7 +9,11 @@ module.exports = {
             if (users.length) {
                 bcrypt.compare(password, users[0].password).then(passwordsMatched => {
                 if (passwordsMatched) {
-                    req.session.user = users[0];
+                    req.session.user = {
+                        firstName: users[0].first_name,
+                        lastName: users[0].last_name,
+                        email: users[0].email
+                    };
                     res.json({ user: req.session.user });
                 } else {
                     res.status(401).json({ message: 'Incorrect email or password!' })
@@ -42,5 +46,13 @@ module.exports = {
     logout: (req, res) => {
         req.session.destroy();
         res.status(200).send();
+    },
+
+    getUser: (req, res) => {
+        if(req.session.user) {
+            res.status(200).json({ user: req.session.user })
+        } else {
+            res.status(404).send('No user logged in!')
+        }
     }
 }

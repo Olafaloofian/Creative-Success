@@ -1,4 +1,9 @@
 .login-container {
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     form {
         display: flex;
         flex-direction: column;
@@ -16,14 +21,30 @@
             background: transparent;
             color: transparent;
             height: 41px;
+            transition: all 0.35s ease;
         }
         .failure {
             background: rgb(252, 168, 168);
             color: rgb(94, 94, 94);
-            transition: all 0.5s ease;
+            transition: all 0.35s ease;
+        }
+        .success {
+            background: rgb(195, 252, 168);
+            color: rgb(94, 94, 94);
+            transition: all 0.35s ease;
         }
     }
 
+}
+
+@media (max-width: 600px) {
+    .login-container {
+        form {
+            small {
+                width: 100%;
+            }
+        }
+    }
 }
 
 @import '../../Sass-Partials/input-styling', '../../Sass-Partials/body-styling', '../../Sass-Partials/button-styling'

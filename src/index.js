@@ -5,13 +5,16 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { AppContainer } from 'react-hot-loader'
 import { BrowserRouter } from 'react-router-dom'
+import ContextProvider from './ContextAPI/ContextProvider'
 
 const render = () => {
     ReactDOM.render(
         <AppContainer>
-            <BrowserRouter>
-                <App />
-            </BrowserRouter>
+            <ContextProvider>
+                <BrowserRouter>
+                    <App />
+                </BrowserRouter>
+            </ContextProvider>
         </AppContainer>,
     document.getElementById('root'));
 }
