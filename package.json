@@ -42,5 +42,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "customize-cra": "^0.2.11"
+  }
 }
