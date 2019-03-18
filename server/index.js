@@ -1,14 +1,16 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
+// TODO: Implement GraphQL
 const graphqlHTTP = require('express-graphql')
 const gqlConfigs = require('./graphqlConfigs')
+//
 const bodyParser = require('body-parser')
 const massive = require('massive')
 const session = require('express-session')
 const controller = require('./controller')
 const authController = require('./authController')
-
+const upload = require('./Services/multer')
 
 // Database connection
 massive(process.env.CONNECTION_STRING).then(dbInstance => {
@@ -47,6 +49,18 @@ app.post('/api/login', authController.bcryptLogin);
 app.post('/api/logout', authController.logout);
 // Return user session
 app.get('/api/user', authController.getUser)
+// Multer AWS S3 image uploading
+const singleUpload = upload.single('image')
+app.post('/api/image-upload', (req, res) => {
+    singleUpload(req, res, (err, some) => {
+        if (err) {
+            console.log('Image upload error! ---', err)
+            return res.status(422).send({errors: [{title: 'Image Upload Error', detail: err.message}] });
+        }
+        return res.json({'imageUrl': req.file.location});
+    })
+})
+
 // Middleware function for ensuring login
 function ensureLoggedIn(req, res, next) {
     if (req.session.user) {
