@@ -1,6 +1,6 @@
 import React from 'react'
 import './Home.scss'
-import Dropzone from 'react-dropzone'
+import FileDrop from '../Tools/FileDrop'
 import { withContext } from '../../ContextAPI/ContextHOC';
 
 function Home (props) {
@@ -17,9 +17,7 @@ function Home (props) {
                     <img src="https://sydneyelizaflorals.files.wordpress.com/2018/11/img_9036.jpg?w=336&h=336&crop=1" alt=""/>
                     {/* HERE */}
                     {props.context.user && 
-                        <Dropzone onDrop={file => onDrop(file)} >
-                            {/* <p>Try dropping some files here, or click to select files to upload.</p> */}
-                        </Dropzone>
+                        <FileDrop />
                     }
                     <img src="https://sydneyelizaflorals.files.wordpress.com/2018/11/img_9034.jpg?w=336&h=336&crop=1" alt=""/>
                     <img src="https://sydneyelizaflorals.files.wordpress.com/2018/11/img_9153.jpg?w=336&h=336&crop=1" alt=""/>
