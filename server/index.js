@@ -1,15 +1,16 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-// TODO: Implement GraphQL
+// TODO: Implement GraphQL in earnest
 const graphqlHTTP = require('express-graphql')
-const gqlConfigs = require('./graphqlConfigs')
+const gqlConfigs = require('./GraphQL/graphqlConfigs')
 //
 const bodyParser = require('body-parser')
 const massive = require('massive')
 const session = require('express-session')
-const controller = require('./controller')
-const authController = require('./authController')
+const nodemailer = require('./Services/nodemailer')
+const authController = require('./Controllers/authController')
+const userController = require('./Controllers/userController')
 const upload = require('./Services/multer')
 
 // Database connection
@@ -38,9 +39,9 @@ app.use('/graphiql', graphqlHTTP({
     graphiql: true
 }))
 
-// --------- Express Endpoints ---------
+// --------- Express Endpoints --------- //
 
-app.post('/api/contact/email', controller.sendContactEmail)
+app.post('/api/contact/email', nodemailer.sendContactEmail)
 // Bcrypt Registration
 app.post('/api/register', authController.bcryptRegister)
 // Bcrypt Login
@@ -49,6 +50,8 @@ app.post('/api/login', authController.bcryptLogin);
 app.post('/api/logout', authController.logout);
 // Return user session
 app.get('/api/user', authController.getUser)
+// Get all images saved in database
+app.get('/api/images', userController.getAllImages)
 // Multer AWS S3 image uploading
 const singleUpload = upload.single('image')
 app.post('/api/image-upload', (req, res) => {
@@ -73,3 +76,8 @@ function ensureLoggedIn(req, res, next) {
 
 const PORT = 4010
 app.listen(PORT, () => console.log(`Server is up and running on port ${PORT} 🌄`))
+
+const path = require('path')
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname), '../build/index.html')
+})

@@ -5,7 +5,7 @@ export default function FileDrop(props) {
     const {acceptedFiles, rejectedFiles, getRootProps, getInputProps} = useDropzone({
         accept: 'image/jpeg, image/png'
     });
-  
+
     const acceptedFilesItems = acceptedFiles.map(file => (
         <li key={file.path}>
             {file.path} - {file.size} bytes
