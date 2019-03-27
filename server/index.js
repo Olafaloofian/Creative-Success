@@ -59,3 +59,8 @@ function ensureLoggedIn(req, res, next) {
 
 const PORT = 4010
 app.listen(PORT, () => console.log(`Server is up and running on port ${PORT} 🌄`))
+
+const path = require('path')
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname), '../build/index.html')
+})
