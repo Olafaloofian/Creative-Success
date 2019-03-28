@@ -42,8 +42,39 @@ create table creative_users(
 -- insert into creative_users (username, email, password)
 -- values ('Lepels', 'zotiloto@yum.com', 'password000');
 
-create table creative_pictures(
-    id int primary key,
-    user_id int references creative_users(id),
-    url text
+create table creative_images (
+    id bigint PRIMARY KEY default make_random_id(),
+    upload_date DATE NOT NULL DEFAULT CURRENT_DATE,
+    user_id bigint references creative_users(id),
+    url text,
+    location varchar(40)
 );
+
+insert into creative_images (user_id, url, location)
+values (1500453386, 'https://s3.amazonaws.com/michaelkerr-projectmedia/img_9034.jpg', 'home');
+
+insert into creative_images (user_id, url, location)
+values (1500453386, 'https://s3.amazonaws.com/michaelkerr-projectmedia/img_9036.jpg', 'home');
+
+insert into creative_images (user_id, url, location)
+values (1500453386, 'https://s3.amazonaws.com/michaelkerr-projectmedia/img_9150.jpg', 'home');
+
+insert into creative_images (user_id, url, location)
+values (1500453386, 'https://s3.amazonaws.com/michaelkerr-projectmedia/img_9153.jpg', 'home');
+
+insert into creative_images (user_id, url, location)
+values (1500453386, 'https://s3.amazonaws.com/michaelkerr-projectmedia/img_0434.jpg', 'home');
+
+insert into creative_images (user_id, url, location)
+values (1500453386, 'https://s3.amazonaws.com/michaelkerr-projectmedia/img_0156.jpg', 'home');
+
+insert into creative_images (user_id, url, location)
+values (1500453386, 'https://s3.amazonaws.com/michaelkerr-projectmedia/img_0158.jpg', 'home');
+insert into creative_images (user_id, url, location)
+values (1500453386, 'https://s3.amazonaws.com/michaelkerr-projectmedia/img_9153.jpg', 'home');
+insert into creative_images (user_id, url, location)
+values (1500453386, 'https://s3.amazonaws.com/michaelkerr-projectmedia/img_9153.jpg', 'home');
+insert into creative_images (user_id, url, location)
+values (1500453386, 'https://s3.amazonaws.com/michaelkerr-projectmedia/img_9153.jpg', 'home');
+insert into creative_images (user_id, url, location)
+values (1500453386, 'https://s3.amazonaws.com/michaelkerr-projectmedia/img_9153.jpg', 'home');

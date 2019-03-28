@@ -1,6 +1,6 @@
 const { buildASTSchema } = require('graphql')
 const gql = require('graphql-tag')
-const index = require('./index.js')
+const index = require('../index.js')
 
 module.exports = {
     schema: buildASTSchema(gql`

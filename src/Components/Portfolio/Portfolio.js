@@ -6,22 +6,22 @@ const projects = [
     {
         id: 1,
         pictureUrls: ['https://sydneyelizaflorals.files.wordpress.com/2018/11/img_0160.jpg?w=550', 'https://sydneyelizaflorals.files.wordpress.com/2018/11/img_0158.jpg?w=676&h=676&crop=1', 'https://sydneyelizaflorals.files.wordpress.com/2018/11/img_0160.jpg?w=676&h=676&crop=1', 'https://sydneyelizaflorals.files.wordpress.com/2018/11/img_0156.jpg?w=676&h=676&crop=1'],
-        description: 'Photography by Bailey'
+        // description: 'Photography by Bailey'
     },
     {
         id: 2,
         pictureUrls: ['https://sydneyelizaflorals.files.wordpress.com/2018/11/img_0433.jpg?w=550', 'https://sydneyelizaflorals.files.wordpress.com/2018/11/img_0432.jpg?w=676&h=676&crop=1', 'https://sydneyelizaflorals.files.wordpress.com/2018/11/img_0434.jpg?w=676&h=676&crop=1', 'https://sydneyelizaflorals.files.wordpress.com/2018/11/img_0436.jpg?w=676&h=676&crop=1'],
-        description: 'Photography by Ciara'
+        // description: 'Photography by Ciara'
     },
     {
         id: 3,
         pictureUrls: ['https://sydneyelizaflorals.files.wordpress.com/2018/11/img_0437.jpg?w=550', 'https://sydneyelizaflorals.files.wordpress.com/2018/09/img_8763.jpg?w=676&h=676&crop=1', 'https://sydneyelizaflorals.files.wordpress.com/2018/09/img_8762.jpg?w=676&h=676&crop=1', 'https://sydneyelizaflorals.files.wordpress.com/2018/11/img_0437.jpg?w=676&h=676&crop=1'],
-        description: 'Photography by Brooke'
+        // description: 'Photography by Brooke'
     },
     {
         id: 4,
         pictureUrls: ['https://sydneyelizaflorals.files.wordpress.com/2018/11/img_9034.jpg?w=550', 'https://sydneyelizaflorals.files.wordpress.com/2018/11/img_9150.jpg?w=676&h=676&crop=1', 'https://sydneyelizaflorals.files.wordpress.com/2018/11/img_9036.jpg?w=676&h=676&crop=1', 'https://sydneyelizaflorals.files.wordpress.com/2018/11/img_9153.jpg?w=676&h=676&crop=1'],
-        description: 'Photography by Briana'
+        // description: 'Photography by Briana'
     }
 ]
 
@@ -51,7 +51,7 @@ export default class Portfolio extends Component {
                         <Link to={`/portfolio/${project.id}`} key={project.id}  className='project'>
                             <div>
                                 <img src={project.pictureUrls[0]} alt={project.description}/>
-                                <div>{project.description}</div>
+                                {/* <div>{project.description}</div> */}
                             </div>
                         </Link>
                     )

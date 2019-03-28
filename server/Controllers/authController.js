@@ -28,7 +28,8 @@ module.exports = {
     bcryptRegister: (req, res) => {
         const db = req.app.get('db');
         const { email, password, firstName, lastName } = req.body;
-        bcrypt.hash(password, numOfSaltRounds).then(hashed => { //WRAP DATABASE FUNCTION IN BCRYPT.HASH
+        bcrypt.hash(password, numOfSaltRounds).then(hashed => { 
+            //WRAP DATABASE FUNCTION IN BCRYPT.HASH
             db.add_user({email, hashed, firstName, lastName}).then(() => {
                 req.session.user = {
                     email,

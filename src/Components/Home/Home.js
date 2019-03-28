@@ -1,17 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Home.scss'
+import FileDrop from '../Tools/FileDrop'
+import Dropzone from 'react-dropzone'
+import editsvg from '../../Assets/editsvg'
 import { withContext } from '../../ContextAPI/ContextHOC';
 
 function Home (props) {
     console.log('------------ props', props)
+    const homeImages = props.context.userImages.home
+
     return (
         <div className="centered-container">
             <section className='home-main'>
                 <figure>
-                    <img src="https://sydneyelizaflorals.files.wordpress.com/2018/11/img_9036.jpg?w=336&h=336&crop=1" alt=""/>
-                    <img src="https://sydneyelizaflorals.files.wordpress.com/2018/11/img_9034.jpg?w=336&h=336&crop=1" alt=""/>
-                    <img src="https://sydneyelizaflorals.files.wordpress.com/2018/11/img_9153.jpg?w=336&h=336&crop=1" alt=""/>
-                    <img src="https://sydneyelizaflorals.files.wordpress.com/2018/11/img_9150.jpg?w=336&h=336&crop=1" alt=""/>
+                    {homeImages && homeImages.map(image => (
+                        // Get images from session storage for this page and render <img> with image url
+                        <div key={image.url}>
+                            <img src={image.url} alt={image.upload_date}/>
+                            {props.context.user && <div className='edit-container'>{editsvg}</div>}
+                        </div>
+                    ))}
                 </figure>
             </section>
             <hr/>
