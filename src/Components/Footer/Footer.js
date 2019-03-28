@@ -1,9 +1,10 @@
 import React from 'react';
 import './Footer.scss'
 import SocialSvg from '../Tools/SocialSvg'
+import { withContext } from '../../ContextAPI/ContextHOC'
 import { Link } from 'react-router-dom'
 
-const Footer = () => {
+const Footer = (props) => {
     return (
         <footer>
             <div className="styled-line"></div>
@@ -18,9 +19,9 @@ const Footer = () => {
                     <SocialSvg color='rgb(160, 160, 160)' name='facebook' size={40} />
                 </a>
             </div>
-            <Link to='/login'>LOGIN</Link>
+            <Link to='/login'>{props.context.user ? 'LOGOUT' : 'LOGIN'}</Link>
         </footer>
     );
 };
 
-export default Footer;
+export default withContext(Footer);

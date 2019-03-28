@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Home.scss'
 import FileDrop from '../Tools/FileDrop'
 import Dropzone from 'react-dropzone'
@@ -7,18 +7,18 @@ import { withContext } from '../../ContextAPI/ContextHOC';
 
 function Home (props) {
     console.log('------------ props', props)
+    const homeImages = props.context.userImages.home
 
     return (
         <div className="centered-container">
             <section className='home-main'>
                 <figure>
-                    {JSON.parse(sessionStorage.getItem('home')).map(image => (
+                    {homeImages && homeImages.map(image => (
                         // Get images from session storage for this page and render <img> with image url
-                        <React.Fragment key={image.url}>
+                        <div key={image.url}>
                             <img src={image.url} alt={image.upload_date}/>
-                            {editsvg}
-                            {props.context.user && <div>React dropzone or other uploading functionality goes here</div>}
-                        </ React.Fragment>
+                            {props.context.user && <div className='edit-container'>{editsvg}</div>}
+                        </div>
                     ))}
                 </figure>
             </section>
