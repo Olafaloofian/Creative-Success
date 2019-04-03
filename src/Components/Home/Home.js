@@ -14,7 +14,7 @@ function Home (props) {
             <section className='home-main'>
                 <figure>
                     {homeImages && homeImages.map(image => (
-                        // Get images from context and render them using img url. Maybe better to do session storage???
+                        // Get images from context and render them using img url. Maybe better to do session storage?
                         <div key={image.url}>
                             <img src={image.url} alt={image.upload_date}/>
                             {props.context.user && <div className='edit-container'>{editsvg}</div>}
