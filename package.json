@@ -33,6 +33,7 @@
   },
   "scripts": {
     "node": "nodemon --watch server --watch db --ext js,sql",
+    "deploy": "git push & git push production master",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
