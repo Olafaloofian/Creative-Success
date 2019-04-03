@@ -6,6 +6,7 @@ import editsvg from '../../Assets/editsvg'
 import { withContext } from '../../ContextAPI/ContextHOC';
 
 function Home (props) {
+    console.log('------------ props', props)
     const homeImages = props.context.userImages.home
 
     return (
