@@ -10,20 +10,13 @@ class PortfolioItem extends Component {
         selectedItem: null
     }
 
-    // componentDidMount() {
-    //     this.getDataFromSessionStorage()
-    // }
-
-    // Get data from session storage and select one based off of route id parameter
-    // getDataFromSessionStorage = () => {
-    //     const portfolioItems = this.props.context.userImages.portfolio
-    //     const filteredItem = portfolioItems.find(item => item.project_id === +this.props.match.params.id)
-
-    //     this.setState({
-    //         allItems: portfolioItems,
-    //         selectedItem: filteredItem
-    //     })
-    // }
+    componentDidMount() {
+        const { userImages } = this.props.context
+        userImages.portfolio && this.setState({
+            selectedItem: userImages.portfolio.find(project => project.id === this.props.match.params.id),
+            allItems: userImages.portfolio
+        })
+    }
 
     // Handles same-component linking to render new data
     componentDidUpdate(prevProps) {

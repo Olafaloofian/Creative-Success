@@ -7,7 +7,6 @@ import './Portfolio.scss'
 
 function Portfolio(props) {
     const { userImages } = props.context
-    console.log(userImages)
     // Ask Sydney if she wants to retain the masonry effect from current site
     return (
         <div className="portfolio-container">

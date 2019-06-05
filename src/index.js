@@ -4,6 +4,7 @@ import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { AppContainer } from 'react-hot-loader'
+// TODO: figure out why BrowserRouter isn't working (Cannot GET /route error)
 import { HashRouter } from 'react-router-dom'
 import ContextProvider from './ContextAPI/ContextProvider'
 
