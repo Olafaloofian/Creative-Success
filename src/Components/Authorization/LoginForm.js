@@ -2,7 +2,7 @@ import React from 'react';
 import './LoginForm.scss'
 import axios from 'axios'
 import LoadingDots from '../../Assets/LoadingDots/LoadingDots';
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import { withContext } from '../../ContextAPI/ContextHOC'
 
 class LoginForm extends React.Component {
@@ -53,13 +53,10 @@ class LoginForm extends React.Component {
                 this.setState({
                     successOrFailure: 'success',
                     loginMessage: 'Login success!'
-                }, () => setTimeout(() => {
-                    this.setState({
-                        redirect: true
-                    })
+                }, () => {
                     // Set the user info to global state
                     this.props.context.methods.setUser(loginResponse.data.user)
-                }, 2000))
+                })
             }
         } catch(error) {
             console.log('------------ error', error)
@@ -78,6 +75,7 @@ class LoginForm extends React.Component {
                 this.setState({
                     redirect: true
                 })
+                this.props.context.methods.setUser(null)
             }
         } catch(error) {
             console.error('Error logging out ---', error)
@@ -86,7 +84,6 @@ class LoginForm extends React.Component {
 
     render() {
         const { email, password, successOrFailure, loginMessage, redirect } = this.state
-        console.log('------------ this.props', this.props)
         const { user } = this.props.context
         if(redirect) {
             return <Redirect to='/' />
@@ -104,7 +101,7 @@ class LoginForm extends React.Component {
                     <input type="email" name='email' placeholder='Email' value={email} onChange={(e) => this.handleInput(e)}/>
                     <input type="password" name="password" placeholder='Password' value={password} onChange={(e) => this.handleInput(e)}/>
                     <small className={successOrFailure === 'failure' || successOrFailure === 'success' ? successOrFailure : ''}>{loginMessage}</small>
-                    <button onClick={(e) => this.login(e)}>Login</button>
+                    {successOrFailure === 'success' ? <Link to='/'><button>Home</button></Link> : <button onClick={(e) => this.login(e)}>Login</button>}
                 </form>
             </div>
         );

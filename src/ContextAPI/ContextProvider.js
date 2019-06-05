@@ -12,6 +12,9 @@ export default class ContextProvider extends React.Component {
                 this.setState({
                     user
                 })
+            },
+            refetchImages: () => {
+                this.getUserImages()
             }
         }
     }
@@ -35,7 +38,6 @@ export default class ContextProvider extends React.Component {
     // Get all images from database and save to session storage so the user only has to wait once for image data
     getUserImages = () => {
         axios.get('/api/images').then(res => {
-            console.log('------------ res', res)
             const images = res.data
             this.setState({
                 userImages: images

@@ -33,7 +33,6 @@ class Contact extends React.Component {
         } else {
             alert('Oops! There has been an error. Please try again at a later time')
         }
-        console.log('------------ emailResponse', emailResponse)
     }
 
     render() {

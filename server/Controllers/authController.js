@@ -10,6 +10,7 @@ module.exports = {
                 bcrypt.compare(password, users[0].password).then(passwordsMatched => {
                 if (passwordsMatched) {
                     req.session.user = {
+                        id: users[0].id,
                         firstName: users[0].first_name,
                         lastName: users[0].last_name,
                         email: users[0].email
@@ -30,8 +31,9 @@ module.exports = {
         const { email, password, firstName, lastName } = req.body;
         bcrypt.hash(password, numOfSaltRounds).then(hashed => { 
             //WRAP DATABASE FUNCTION IN BCRYPT.HASH
-            db.add_user({email, hashed, firstName, lastName}).then(() => {
+            db.add_user({email, hashed, firstName, lastName}).then(user => {
                 req.session.user = {
+                    id: user[0].id,
                     email,
                     firstName,
                     lastName

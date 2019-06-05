@@ -52,6 +52,8 @@ app.post('/api/logout', authController.logout);
 app.get('/api/user', authController.getUser)
 // Get all images saved in database
 app.get('/api/images', userController.getAllImages)
+// Upload new portfolio project
+app.post('/api/portfolio', userController.addProject)
 // Multer AWS S3 image uploading
 const singleUpload = upload.single('image')
 app.post('/api/image-upload', (req, res) => {

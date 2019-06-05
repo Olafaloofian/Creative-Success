@@ -1,4 +1,4 @@
-button {
+button, .button {
     margin: 2% auto 0 auto;
     width: 20%;
     background: #e0e0e0;
@@ -12,7 +12,7 @@ button {
     transition: 0.3s ease-in-out;
 }
 
-button:hover {
+button:hover, .button:hover {
     background: #c5c5c5;
     transition: 0.3s ease-in-out;
 }

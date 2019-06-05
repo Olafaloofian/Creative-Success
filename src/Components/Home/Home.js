@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './Home.scss'
-import FileDrop from '../Tools/FileDrop'
-import Dropzone from 'react-dropzone'
+// import FileDrop from '../Tools/FileDrop'
+// import Dropzone from 'react-dropzone'
 import editsvg from '../../Assets/editsvg'
 import { withContext } from '../../ContextAPI/ContextHOC';
 
 function Home (props) {
-    console.log('------------ props', props)
     const homeImages = props.context.userImages.home
 
     return (

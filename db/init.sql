@@ -47,7 +47,17 @@ create table creative_images (
     upload_date DATE NOT NULL DEFAULT CURRENT_DATE,
     user_id bigint references creative_users(id),
     url text,
-    location varchar(40)
+    location varchar(40),
+    project_id bigint references creative_projects(id),
+    cover_image boolean
+);
+
+create table creative_projects (
+    id bigint PRIMARY KEY default make_random_id(),
+    upload_date DATE NOT NULL DEFAULT CURRENT_DATE,
+    user_id bigint references creative_users(id),
+    project_name text,
+    description text
 );
 
 insert into creative_images (user_id, url, location)
