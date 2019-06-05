@@ -87,6 +87,19 @@
     }
 }
 
+@media (max-width: 820px) {
+    .portfolio-container {
+        section {
+            form {
+                width: 80%;
+            }
+            button {
+                width: 50%;
+            }
+        }
+    }
+}
+
 @media (max-width: 600px) {
     .portfolio-container {
         .projects-container {
@@ -96,6 +109,11 @@
                     width: 90%;
                     height: auto;
                 }
+            }
+        }
+        section {
+            button {
+                width: 80%;
             }
         }
     }

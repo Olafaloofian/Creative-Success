@@ -57,6 +57,14 @@ header {
     }
 }
 
+@media (max-width: 820px) {
+    .home-main {
+        figure {
+            width: 500px;
+        }
+    }
+}
+
 @media (max-width: 600px) {
     .home-main {
         figure {

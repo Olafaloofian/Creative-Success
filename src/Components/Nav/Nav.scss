@@ -11,7 +11,8 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width: 10%;
+                min-width: 10%;
+                padding: 0 7px 0 7px;
                 height: 49px;
                 text-decoration: none;
                 color: rgb(114, 113, 113);
@@ -25,6 +26,7 @@
             }
             .selected-nav {
                 transition: 0.3s ease-in-out;
+                min-width: 10%;
                 border: 2px solid rgb(202, 202, 202);
             }
             .selected-nav:hover {
@@ -41,13 +43,13 @@
         margin: 0 5vw;
         letter-spacing: 0.2em;
     }
+    .banner-image {
+        width: 100%;
+    }
 }
 
 @media (max-width: 600px) {
     .nav-container {
-        .banner-image {
-            width: 100%;
-        }
         nav{
             .drawer {
                 position: fixed;
