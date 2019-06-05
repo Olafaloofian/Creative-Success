@@ -4,16 +4,16 @@ import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { AppContainer } from 'react-hot-loader'
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import ContextProvider from './ContextAPI/ContextProvider'
 
 const render = () => {
     ReactDOM.render(
         <AppContainer>
             <ContextProvider>
-                <BrowserRouter>
+                <HashRouter>
                     <App />
-                </BrowserRouter>
+                </HashRouter>
             </ContextProvider>
         </AppContainer>,
     document.getElementById('root'));
