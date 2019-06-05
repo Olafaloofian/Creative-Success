@@ -40,15 +40,25 @@ class PortfolioForm extends React.Component {
                 this.setState({
                     coverImage: uploadResponse.data.imageUrl
                 })
+            } else if (uploadResponse.status === 413) {
+                this.setState({
+                    coverImage: null
+                })
+                alert('Image too large. Please try a different one.')
+            } else {
+                console.error('Image upload error!', uploadResponse.data)
             }
         } else {
             this.setState(prevState => ({ additionalImages: ['loading', ...prevState.additionalImages] }))
             const uploadResponse = await axios.post('/api/image-upload', formData)
             if (uploadResponse.status === 200) {
-                let newImageList = [...this.state.additionalImages, uploadResponse.data.imageUrl]
+                let newImageList = [...this.state.additionalImages]
                 // Remove the loading indicator
                 newImageList.shift()
+                newImageList.unshift(uploadResponse.data.imageUrl)
                 this.setState(prevState => ({ additionalImages: newImageList }))
+            } else if (uploadResponse.status === 413) {
+                alert('Image too large. Please try a different one.')
             } else {
                 console.error('Image upload error!', uploadResponse.data)
             }

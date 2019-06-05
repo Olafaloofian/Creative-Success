@@ -27,7 +27,7 @@ module.exports = {
                 rearrangedPortfolio.forEach(project => {
                     project.images.sort((a, b) => a === b ? 0 : a ? -1 : 1)
                 })
-                imageContainer.portfolio = rearrangedPortfolio
+                imageContainer.portfolio = rearrangedPortfolio.reverse()
             }
 
             res.status(200).send(imageContainer)

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { withContext } from '../../ContextAPI/ContextHOC'
 import LoadingDots from '../../Assets/LoadingDots/LoadingDots'
 import './Portfolio.scss'
@@ -50,7 +50,11 @@ class PortfolioItem extends Component {
 
     render() {
         const { selectedItem, allItems } = this.state
-
+        if (!selectedItem) {
+            return (
+                <div className="loader"><LoadingDots /></div>
+            )
+        }
         return (
             <div className='portfolio-item-container'>
                 {allItems ?

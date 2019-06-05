@@ -44,6 +44,15 @@
     }
 }
 
+.loader {
+    margin: 15px 0 15px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .portfolio-item-container {
     section {
         margin-top: 30px;
@@ -52,7 +61,7 @@
         justify-content: center;
         align-items: center;
         > img {
-            width: 50%;
+            width: 35%;
             height: auto;
             margin: 5px;
         }
