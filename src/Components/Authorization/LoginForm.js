@@ -91,6 +91,7 @@ class LoginForm extends React.Component {
         if(user) {
             return (
                 <div className="login-container">
+                    <h4>{`Welcome, ${user.firstName} ${user.lastName}`}</h4>
                     <button onClick={this.logout}>Log Out</button>
                 </div>
             )

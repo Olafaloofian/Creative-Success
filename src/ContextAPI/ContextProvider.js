@@ -28,7 +28,7 @@ export default class ContextProvider extends React.Component {
     getLoggedInUser = () => {
         axios.get('/api/user').then(response => {
             this.setState({
-                user: response.data
+                user: response.data.user
             })
         }).catch(error => {
             console.log('------------ Get User Error', error)
