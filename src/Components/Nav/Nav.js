@@ -12,7 +12,6 @@ class Nav extends React.Component {
         // Getting the path name on page load to correctly style the nav bar
         const path = window.location.pathname.split('')
         path.shift()
-        console.log(path)
         const pathname = path.join("")
 
         if(pathname === '') {
@@ -27,7 +26,6 @@ class Nav extends React.Component {
     }
 
     render() {
-        console.log('location', this.state.selectedNav)
         return (
             <div className="nav-container">
                 <nav>

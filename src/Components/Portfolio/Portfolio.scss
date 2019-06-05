@@ -18,9 +18,27 @@
             color: rgb(161, 161, 161);
             font-family: 'Lora', serif;
             img {
-                height: 80%;
+                height: 400px;
                 width: auto;
                 margin-bottom: 15px;
+            }
+        }
+    }
+    .button {
+        width: 100%;
+    }
+    section {
+        width: 100%;
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            .file-input {
+                border: none;
+                border-radius: 0; 
+                border-bottom: 2px solid #d8d8d8;
             }
         }
     }
@@ -69,6 +87,7 @@
                 margin: 10px auto;
                 img {
                     width: 90%;
+                    height: auto;
                 }
             }
         }
@@ -89,3 +108,6 @@
         }
     }
 }
+
+
+@import '../../Sass-Partials/form-styling'
