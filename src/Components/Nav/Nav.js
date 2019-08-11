@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import logo from '../../Assets/logo.jpg'
 import './Nav.scss'
 
 class Nav extends React.Component {
@@ -43,7 +44,7 @@ class Nav extends React.Component {
                 </nav>
                 <header>
                     <figure>
-                        <img className='banner-image' src="https://sydneyelizaflorals.files.wordpress.com/2018/03/cropped-sydney-eliza-florals-logo6.jpg?w=680&h=296" alt="Sydney Eliza Florals"/>
+                        <img className='banner-image' src={logo} alt="Sydney Eliza Florals"/>
                     </figure>
                 <small>“NORMALITY IS A PAVED ROAD, IT’S COMFORTABLE TO WALK BUT NO FLOWERS GROW” —VINCENT VAN GOGH</small>
             </header>
