@@ -39,7 +39,7 @@ module.exports = {
         })
 
         const mailOptions = {
-            from: `"Michael Kerr" <${process.env.EMAIL}`,
+            from: `"SydneyElizaFlorals.com" <${process.env.EMAIL}`,
             to: process.env.SYDNEYS_EMAIL,
             replyTo: email,
             subject: 'New Contact on SydneyElizaFlorals.com!',

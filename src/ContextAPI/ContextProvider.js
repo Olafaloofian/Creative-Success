@@ -31,7 +31,7 @@ export default class ContextProvider extends React.Component {
                 user: response.data.user
             })
         }).catch(error => {
-            console.log('------------ Get User Error', error)
+            console.log('------------ Get User', error)
         })
     }
 
@@ -39,6 +39,7 @@ export default class ContextProvider extends React.Component {
     getUserImages = () => {
         axios.get('/api/images').then(res => {
             const images = res.data
+            console.log('------------ images', images)
             this.setState({
                 userImages: images
             })
